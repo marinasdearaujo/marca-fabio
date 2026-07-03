@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questionário de Marca · Fabio Dombrate</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --bg:#0c0c0f; --card:#16161a; --card2:#1c1c22; --line:#2a2a32; --text:#f4f2ee; --muted:#9b9890;
+    --gold:#f5b62e; --gold-d:#c8912a; --purple:#7c3aed; --radius:14px; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{ background:var(--bg); color:var(--text); font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(700px 460px at 85% -8%, rgba(124,58,237,.26), transparent 60%),
+      radial-gradient(600px 460px at 0% 108%, rgba(124,58,237,.12), transparent 55%);
+    background-attachment:fixed; padding-bottom:120px; }
+  .wrap{ max-width:680px; margin:0 auto; padding:0 20px; }
+  .anton{ font-family:'Anton',Impact,sans-serif; font-weight:400; text-transform:uppercase; letter-spacing:.5px; line-height:1.04; }
+
+  header{ padding:44px 0 10px; text-align:left; }
+  .brand{ font-family:'Anton'; font-size:16px; letter-spacing:2.5px; color:var(--gold); text-transform:uppercase; }
+  .brand small{ display:block; color:#7c7c85; font-family:'Inter'; font-weight:600; letter-spacing:3px; font-size:10px; margin-top:3px; }
+  h1.title{ font-size:clamp(34px,7vw,50px); margin:26px 0 16px; }
+  h1.title .hl{ color:var(--gold); }
+  .intro{ font-family:'Fraunces'; font-style:italic; font-size:17px; color:#d9d5cc; line-height:1.5; }
+  .intro b{ color:var(--text); font-style:normal; font-weight:600; }
+  .howto{ margin-top:18px; background:var(--card); border:1px solid var(--line); border-left:3px solid var(--gold);
+    border-radius:0 10px 10px 0; padding:12px 16px; font-size:14px; color:#c9c6bf; }
+
+  .sec{ margin-top:40px; }
+  .sec-h{ display:flex; align-items:baseline; gap:12px; border-bottom:1px solid var(--line); padding-bottom:8px; margin-bottom:6px; }
+  .sec-h .n{ font-family:'Anton'; font-size:26px; color:var(--purple); opacity:.85; }
+  .sec-h h2{ font-family:'Anton'; font-weight:400; text-transform:uppercase; font-size:17px; letter-spacing:.5px; }
+
+  .q{ margin-top:22px; }
+  .q label{ display:block; font-size:15.5px; font-weight:500; color:#eceae4; margin-bottom:9px; }
+  .q label .num{ color:var(--gold); font-weight:600; margin-right:6px; }
+  .q textarea{ width:100%; min-height:78px; resize:vertical; background:var(--card2); color:var(--text);
+    border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-family:'Inter',sans-serif; font-size:15px; line-height:1.5;
+    transition:border-color .15s ease; }
+  .q textarea:focus{ outline:none; border-color:var(--gold); }
+  .q textarea::placeholder{ color:#5f5c55; }
+
+  .bar{ position:fixed; left:0; right:0; bottom:0; z-index:50; background:rgba(12,12,15,.94); backdrop-filter:blur(10px);
+    border-top:1px solid var(--line); padding:14px 20px; }
+  .bar-in{ max-width:680px; margin:0 auto; display:flex; gap:10px; align-items:center; }
+  .prog{ flex:1; font-size:13px; color:var(--muted); }
+  .prog b{ color:var(--gold); }
+  .btn{ border:none; border-radius:11px; font-family:'Inter',sans-serif; font-weight:700; font-size:14.5px; cursor:pointer;
+    padding:13px 20px; text-decoration:none; display:inline-flex; align-items:center; gap:7px; }
+  .btn-wa{ background:var(--gold); color:#15120a; }
+  .btn-wa:active{ transform:translateY(1px); }
+  .btn-ghost{ background:transparent; color:var(--muted); border:1px solid var(--line); padding:13px 14px; }
+  .saved{ font-size:12px; color:#5a8c5a; margin-top:6px; height:14px; text-align:left; }
+
+  footer{ text-align:center; color:var(--muted); font-size:13px; padding:34px 0 10px; }
+  @media(max-width:520px){ .prog{ font-size:11.5px; } .btn{ padding:12px 14px; font-size:13.5px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">FABIO DOMBRATE<small>QUESTIONÁRIO DE MARCA</small></div>
+    <h1 class="title anton">Antes da logo,<br><span class="hl">me conta de você.</span></h1>
+    <p class="intro">Mano, antes de eu desenhar tua logo e o brandbook, preciso te ouvir. <b>Não tem resposta certa nem errada</b>, e não precisa escrever bonito. Responde do teu jeito. As perguntas que te fizerem pensar são as mais importantes, e pode pular as que não fizerem sentido.</p>
+    <div class="howto">✍️ Digita direto nos campos. Tuas respostas <b>salvam sozinhas</b> nesse aparelho, então pode fechar e voltar depois. No fim, é só tocar em <b>"Enviar pra Marina"</b>.</div>
+  </header>
+
+  <form id="form"></form>
+
+  <footer>Capturar a essência. O resto é ajuste.</footer>
+</div>
+
+<div class="bar">
+  <div class="bar-in">
+    <div class="prog"><b id="done">0</b>/26 respondidas · <span id="savedmsg">salva sozinho</span></div>
+    <button type="button" class="btn btn-ghost" id="copy" title="Copiar respostas">Copiar</button>
+    <button type="button" class="btn btn-wa" id="send">Enviar pra Marina →</button>
+  </div>
+</div>
+
+<script>
+const SECTIONS = [
+  { t:"Essência e propósito", qs:[
+    "Se você tivesse que explicar pra uma criança o que você faz, sem usar a palavra \"fotógrafo\", o que diria?",
+    "Por que fotografia, e não outra coisa? O que te puxou pra cá, e o que te mantém?",
+    "Qual é a sensação que você quer que a pessoa tenha quando vê uma foto sua? (uma palavra ou uma frase)",
+    "Tem algo da sua história (a arquitetura, o olhar do seu pai) que ainda vive no jeito que você fotografa hoje?"
+  ]},
+  { t:"O que você faz e pra quem", qs:[
+    "Dos seus trabalhos, quais três tipos você mais quer fazer daqui pra frente? (retrato, ensaio feminino, casamento, produto, editorial, fitness...)",
+    "Tem algum tipo que você faz mas preferia deixar de lado? (é só pra eu entender o foco)",
+    "Descreve a pessoa que você mais gostaria de ter como cliente. Idade, o que valoriza, por que te procuraria.",
+    "O que essa pessoa sente ANTES de te contratar? (insegurança com a imagem? medo de foto artificial? vontade de se ver bonita?)"
+  ]},
+  { t:"A personalidade da marca", qs:[
+    "Se a sua marca fosse uma pessoa, como ela seria? (calma ou intensa? séria ou brincalhona? sofisticada ou acessível? reservada ou expansiva?)",
+    "Escolhe 3 a 5 palavras que a marca É. E 2 ou 3 palavras que a marca NÃO é.",
+    "A marca fala mais como um artista (\"capturar a essência\", arte, olhar) ou como um profissional prático (resultado, portfólio)? Pra que lado pende?",
+    "Tem alguma marca (de qualquer área) que você admira o jeito de se comunicar? Por quê?"
+  ]},
+  { t:"Estética e visual", qs:[
+    "O que mais te representa: o dark dramático (luz esculpindo no breu) ou tem um lado mais claro, arejado, natural que você quer mostrar também?",
+    "Que cores você sente que são \"a sua cara\"? E tem alguma que você não quer ver perto da tua marca de jeito nenhum?",
+    "Você curte um visual mais minimalista e clean (muito espaço, pouca coisa) ou mais cheio, texturizado, dramático?",
+    "Pensa numa logo de fotógrafo que você achou boa e numa que achou brega. O que separou uma da outra?",
+    "Você tem alguma marca d'água, símbolo, iniciais ou jeito de assinar as fotos hoje? Quer manter algo disso?"
+  ]},
+  { t:"Nome e tom", qs:[
+    "Como você quer ser chamado profissionalmente: \"Fabio Dombrate\", \"Dombrate\", \"Dombrate Fotografia\"? (tua palavra final)",
+    "Tem uma frase, um lema, um jeito de fechar uma conversa com cliente que já é a tua marca registrada?",
+    "Quando fala com cliente, você é mais formal (\"você\", cuidadoso) ou mais próximo/informal (\"tu\", solto)?"
+  ]},
+  { t:"Concorrência e diferença", qs:[
+    "Cita 2 ou 3 fotógrafos (locais ou de fora) que você admira. O que eles têm que você respeita?",
+    "E o que VOCÊ faz que eles não fazem, ou faz diferente? Qual é a tua vantagem, mesmo que pareça pequena?",
+    "Se um cliente escolhe você em vez de um estúdio mais barato, qual é o motivo de verdade?"
+  ]},
+  { t:"Onde a marca vai viver", qs:[
+    "Onde você mais vai usar essa marca? (Instagram, site, marca d'água, Google Meu Negócio, cartão, contrato, ebook, curso...)",
+    "Nos próximos 2 anos, o que você quer que essa marca já esteja segurando? (só ensaios? ensaios + ebook + curso? uma escola? uma linha de produtos?)"
+  ]},
+  { t:"Bônus — referências", qs:[
+    "Manda link de 2 ou 3 sites/perfis de fotógrafo que você acha que \"acertaram\" a marca. Não precisa explicar, só manda. (Vou te enviar um board pra você reagir também.)"
+  ]}
+];
+
+const form = document.getElementById('form');
+let idx = 0;
+const questions = [];
+SECTIONS.forEach((s, si) => {
+  const sec = document.createElement('div'); sec.className = 'sec';
+  sec.innerHTML = `<div class="sec-h"><span class="n">${String(si+1).padStart(2,'0')}</span><h2>${s.t}</h2></div>`;
+  s.qs.forEach(q => {
+    idx++;
+    const key = 'fd_q'+idx;
+    const div = document.createElement('div'); div.className='q';
+    div.innerHTML = `<label><span class="num">${idx}.</span>${q}</label><textarea id="${key}" data-key="${key}" placeholder="Escreve aqui..."></textarea>`;
+    sec.appendChild(div);
+    questions.push({key, q, n:idx});
+  });
+  form.appendChild(sec);
+});
+
+const doneEl = document.getElementById('done');
+const savedmsg = document.getElementById('savedmsg');
+function refresh(){
+  let c=0; questions.forEach(x=>{ if((localStorage.getItem(x.key)||'').trim()) c++; });
+  doneEl.textContent = c;
+}
+questions.forEach(x=>{
+  const ta = document.getElementById(x.key);
+  ta.value = localStorage.getItem(x.key) || '';
+  let tmr;
+  ta.addEventListener('input', ()=>{
+    localStorage.setItem(x.key, ta.value);
+    refresh();
+    savedmsg.textContent = 'salvando...';
+    clearTimeout(tmr); tmr=setTimeout(()=> savedmsg.textContent='salvo ✓', 500);
+  });
+});
+refresh();
+
+function compile(){
+  let out = 'QUESTIONÁRIO DE MARCA — FABIO DOMBRATE\n\n';
+  questions.forEach(x=>{
+    const a = (localStorage.getItem(x.key)||'').trim();
+    out += x.n + ') ' + x.q + '\nR: ' + (a || '(em branco)') + '\n\n';
+  });
+  return out;
+}
+document.getElementById('send').addEventListener('click', ()=>{
+  const txt = encodeURIComponent(compile());
+  window.location.href = 'https://wa.me/?text=' + txt;
+});
+document.getElementById('copy').addEventListener('click', async ()=>{
+  try{ await navigator.clipboard.writeText(compile()); savedmsg.textContent='respostas copiadas ✓'; }
+  catch(e){ savedmsg.textContent='use o botão Enviar'; }
+});
+</script>
+</body>
+</html>
