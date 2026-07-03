@@ -78,7 +78,7 @@
 
 <div class="bar">
   <div class="bar-in">
-    <div class="prog"><b id="done">0</b>/26 respondidas · <span id="savedmsg">salva sozinho</span></div>
+    <div class="prog"><b id="done">0</b>/<span id="total">–</span> respondidas · <span id="savedmsg">salva sozinho</span></div>
     <button type="button" class="btn btn-ghost" id="copy" title="Copiar respostas">Copiar</button>
     <button type="button" class="btn btn-wa" id="send">Enviar pra Marina →</button>
   </div>
@@ -94,38 +94,36 @@ const SECTIONS = [
   ]},
   { t:"O que você faz e pra quem", qs:[
     "Dos seus trabalhos, quais três tipos você mais quer fazer daqui pra frente? (retrato, ensaio feminino, casamento, produto, editorial, fitness...)",
-    "Tem algum tipo que você faz mas preferia deixar de lado? (é só pra eu entender o foco)",
-    "Descreve a pessoa que você mais gostaria de ter como cliente. Idade, o que valoriza, por que te procuraria.",
+    "Descreve o cliente ideal: quem é, o que valoriza, por que te procuraria.",
     "O que essa pessoa sente ANTES de te contratar? (insegurança com a imagem? medo de foto artificial? vontade de se ver bonita?)"
   ]},
   { t:"A personalidade da marca", qs:[
-    "Se a sua marca fosse uma pessoa, como ela seria? (calma ou intensa? séria ou brincalhona? sofisticada ou acessível? reservada ou expansiva?)",
     "Escolhe 3 a 5 palavras que a marca É. E 2 ou 3 palavras que a marca NÃO é.",
-    "A marca fala mais como um artista (\"capturar a essência\", arte, olhar) ou como um profissional prático (resultado, portfólio)? Pra que lado pende?",
-    "Tem alguma marca (de qualquer área) que você admira o jeito de se comunicar? Por quê?"
+    "A marca fala mais como um artista (\"capturar a essência\", arte, olhar) ou como um profissional prático (resultado, portfólio)? Pra que lado pende?"
   ]},
   { t:"Estética e visual", qs:[
-    "O que mais te representa: o dark dramático (luz esculpindo no breu) ou tem um lado mais claro, arejado, natural que você quer mostrar também?",
-    "Que cores você sente que são \"a sua cara\"? E tem alguma que você não quer ver perto da tua marca de jeito nenhum?",
+    "O que mais te representa: o dark dramático (luz esculpindo no breu) ou tem um lado mais claro, arejado, natural que você também quer mostrar?",
+    "Que cores são \"a sua cara\"? E tem alguma que você não quer perto da tua marca de jeito nenhum?",
     "Você curte um visual mais minimalista e clean (muito espaço, pouca coisa) ou mais cheio, texturizado, dramático?",
     "Pensa numa logo de fotógrafo que você achou boa e numa que achou brega. O que separou uma da outra?",
-    "Você tem alguma marca d'água, símbolo, iniciais ou jeito de assinar as fotos hoje? Quer manter algo disso?"
+    "Você já tem alguma marca d'água, símbolo ou iniciais nas fotos? Quer manter algo disso?"
   ]},
-  { t:"Nome e tom", qs:[
+  { t:"Nome e diferença", qs:[
     "Como você quer ser chamado profissionalmente: \"Fabio Dombrate\", \"Dombrate\", \"Dombrate Fotografia\"? (tua palavra final)",
-    "Tem uma frase, um lema, um jeito de fechar uma conversa com cliente que já é a tua marca registrada?",
-    "Quando fala com cliente, você é mais formal (\"você\", cuidadoso) ou mais próximo/informal (\"tu\", solto)?"
+    "Tem uma frase ou lema que já é a tua marca registrada com cliente?",
+    "Cita 2 ou 3 fotógrafos que você admira, e o que você faz de diferente deles. Por que alguém te escolheria mesmo pagando mais?"
   ]},
-  { t:"Concorrência e diferença", qs:[
-    "Cita 2 ou 3 fotógrafos (locais ou de fora) que você admira. O que eles têm que você respeita?",
-    "E o que VOCÊ faz que eles não fazem, ou faz diferente? Qual é a tua vantagem, mesmo que pareça pequena?",
-    "Se um cliente escolhe você em vez de um estúdio mais barato, qual é o motivo de verdade?"
+  { t:"Site e ensaios (prático)", qs:[
+    "Qual a faixa de preço dos teus ensaios e o que está incluído em cada um? (vai direto pro site)",
+    "Qual WhatsApp/contato o site deve usar, e onde fica o estúdio? (atende em domicílio ou externa também?)",
+    "Qual o prazo de entrega das fotos depois do ensaio?",
+    "Você tem depoimentos de clientes? Pode mandar 2 ou 3 (print ou texto), ou consegue pedir?"
   ]},
-  { t:"Onde a marca vai viver", qs:[
-    "Onde você mais vai usar essa marca? (Instagram, site, marca d'água, Google Meu Negócio, cartão, contrato, ebook, curso...)",
-    "Nos próximos 2 anos, o que você quer que essa marca já esteja segurando? (só ensaios? ensaios + ebook + curso? uma escola? uma linha de produtos?)"
+  { t:"Ebook", qs:[
+    "Pro ebook, você consegue tirar prints da tela/menu da tua câmera e montar uns 3 ou 4 \"antes e depois\"? (é o que falta pra versão ilustrada)",
+    "Qual é o erro que TODO iniciante comete e que você corrige sempre? (vira conteúdo de ouro pro ebook e pros vídeos)"
   ]},
-  { t:"Bônus — referências", qs:[
+  { t:"Referências", qs:[
     "Manda link de 2 ou 3 sites/perfis de fotógrafo que você acha que \"acertaram\" a marca. Não precisa explicar, só manda. (Vou te enviar um board pra você reagir também.)"
   ]}
 ];
@@ -164,6 +162,7 @@ questions.forEach(x=>{
     clearTimeout(tmr); tmr=setTimeout(()=> savedmsg.textContent='salvo ✓', 500);
   });
 });
+document.getElementById('total').textContent = questions.length;
 refresh();
 
 function compile(){
