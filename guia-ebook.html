@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Manual — Guia de Produção · Fábio Dombrate</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{ --navy:#101826; --navy2:#0b111c; --panel:#141d2c; --cream:#efe7d7; --ink:#16130e;
+    --accent:#c06a30; --gold:#c9a45f; --ctext:#e7e0d2; --cmuted:#8b93a2; --line:#26303f; }
+  *{margin:0;padding:0;box-sizing:border-box} html{scroll-behavior:smooth}
+  body{ background:var(--navy); color:var(--ctext); font-family:'Jost',sans-serif; font-weight:300; line-height:1.8; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    background-image:radial-gradient(700px 460px at 88% -6%, rgba(192,106,48,.10), transparent 60%); }
+  a{color:var(--gold)}
+  .wrap{ max-width:820px; margin:0 auto; padding:0 24px; }
+  .serif{ font-family:'Cormorant Garamond',serif }
+  .eyebrow{ font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--gold) }
+  h1{ font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(36px,7vw,58px); color:#fff; line-height:1.04; margin:14px 0 0 }
+  h2{ font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(24px,4vw,32px); color:#fff; margin:0 0 6px }
+  h1 .it,h2 .it{ font-style:italic; color:var(--accent) }
+  p{ margin:0 0 14px; color:#d3cec3; font-size:16.5px }
+  .lead{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:20px; color:#e0d9c9 }
+
+  header{ padding:54px 0 20px; border-bottom:1px solid var(--line); }
+  .brand{ display:flex; align-items:center; gap:12px; margin-bottom:26px }
+  .mono{ width:38px;height:38px;border:1px solid var(--gold);color:var(--gold);border-radius:3px;font-family:'Cormorant Garamond',serif;font-weight:600;display:flex;align-items:center;justify-content:center;font-size:18px }
+  .brand b{ font-family:'Cormorant Garamond',serif;font-weight:600;font-size:17px;letter-spacing:.12em;text-transform:uppercase;color:#fff }
+
+  section{ padding:44px 0; border-bottom:1px solid var(--line) }
+  .kf{ font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--gold); margin-bottom:18px }
+
+  /* shopping list */
+  .need{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media(max-width:640px){ .need{ grid-template-columns:1fr } }
+  .need .card{ background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:22px 20px }
+  .need .card .ic{ font-size:24px }
+  .need .card h3{ font-family:'Cormorant Garamond',serif; font-weight:600; font-size:20px; color:#fff; margin:8px 0 4px }
+  .need .card p{ font-size:14.5px; margin:0 }
+
+  /* perguntas */
+  .q{ counter-reset:q; }
+  .q .item{ display:flex; gap:16px; padding:16px 0; border-top:1px solid var(--line) }
+  .q .item:before{ counter-increment:q; content:counter(q); font-family:'Cormorant Garamond',serif; font-style:italic; font-size:26px; color:var(--accent); min-width:26px }
+  .q .item div b{ color:#fff; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:18px }
+  .q .item div p{ margin:2px 0 0; font-size:15px }
+
+  /* esqueleto */
+  .parts .part{ margin:20px 0 }
+  .parts .pt{ font-family:'Cormorant Garamond',serif; font-weight:600; font-size:22px; color:var(--gold); margin-bottom:8px }
+  .row{ display:flex; align-items:flex-start; gap:12px; padding:11px 0; border-top:1px solid var(--line) }
+  .row .txt{ flex:1 }
+  .row .txt b{ color:#fff; font-weight:400; font-size:16px }
+  .row .txt small{ display:block; color:var(--cmuted); font-size:13.5px }
+  .badge{ font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; padding:4px 9px; border-radius:20px; white-space:nowrap; font-weight:500 }
+  .b-nos{ background:rgba(139,147,162,.14); color:#aab2be; border:1px solid #2c3646 }
+  .b-voce{ background:rgba(192,106,48,.16); color:#e0925c; border:1px solid #7a4526 }
+  .b-video{ background:rgba(201,164,95,.14); color:var(--gold); border:1px solid #6d5a34 }
+  .legend{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:20px }
+
+  .tip{ background:var(--panel); border-left:3px solid var(--gold); border-radius:0 8px 8px 0; padding:14px 18px; margin:18px 0; font-size:15px; color:#cfc8ba }
+  .tip b{ color:var(--gold) }
+  ul{ margin:6px 0 14px 0; list-style:none }
+  li{ font-size:15.5px; margin:8px 0; padding-left:20px; position:relative; color:#d3cec3 }
+  li:before{ content:'—'; position:absolute; left:0; color:var(--accent) }
+  footer{ padding:44px 0 70px; text-align:center; color:var(--cmuted); font-size:14px }
+  footer .sig{ font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gold); font-size:18px }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brand"><span class="mono">FD</span><b>Fábio Dombrate</b></div>
+    <div class="eyebrow">O Manual Que Não Veio na Caixa · Guia de produção</div>
+    <h1>O esqueleto do ebook,<br>e <span class="it">o que eu preciso de você.</span></h1>
+    <p class="lead" style="margin-top:18px">Mano, o ebook está quase pronto na estrutura. Pra ele ficar <b>com a tua cara</b> (e não mais um ebook genérico de fotografia), preciso de umas coisas tuas. Este guia mostra exatamente o quê.</p>
+  </header>
+
+  <section>
+    <div class="kf">A ideia</div>
+    <h2>O que faz esse ebook ser <span class="it">teu</span></h2>
+    <p>Todo capítulo tem duas camadas. A <b>parte prática</b> (ajustes, receitas, esquemas) a gente escreve. A <b>parte autoral</b> — os <b>estudos de caso</b>, onde você destrincha uma foto sua e conta as decisões que tomou — só você pode dar. É isso que transforma "um ebook de fotografia" em "o ebook do Fábio".</p>
+    <p style="margin-bottom:0">Já montei um exemplo pronto desse formato, dá uma olhada pra sentir: <a href="https://dombratefotografia.com.br/demo/">ver o capítulo-demo →</a></p>
+  </section>
+
+  <section>
+    <div class="kf">O que eu preciso de você</div>
+    <h2 style="margin-bottom:20px">A tua lista, <span class="it">resumida</span></h2>
+    <div class="need">
+      <div class="card"><div class="ic">🖼️</div><h3>4 a 5 fotos favoritas</h3><p>Trabalhos teus que você ama e tem orgulho. De preferência variados (retrato, luz dramática, algo com composição forte). Em alta resolução.</p></div>
+      <div class="card"><div class="ic">🎙️</div><h3>Um áudio por foto</h3><p>~3 min cada, você contando as decisões daquela foto (as 4 perguntas abaixo). Pode ser áudio de WhatsApp mesmo.</p></div>
+      <div class="card"><div class="ic">🎙️</div><h3>Um áudio da tua história</h3><p>~3 min: por que fotografia, o olhar do teu pai, o que fotografar significa pra você. Vira a carta de abertura.</p></div>
+      <div class="card"><div class="ic">🎥</div><h3>2 a 3 mini-vídeos <span style="color:var(--gold)">(bônus)</span></h3><p>Curtos, você demonstrando algo (montar a luz, dirigir uma pose, editar). Enriquecem o ebook <b>e já viram aula do teu curso</b>.</p></div>
+    </div>
+    <div class="tip"><b>Dica:</b> não precisa gravar tudo de uma vez nem falar bonito. Fala como se estivesse me explicando. O jeito verdadeiro é o melhor.</div>
+  </section>
+
+  <section>
+    <div class="kf">O coração dos estudos de caso</div>
+    <h2>As 4 perguntas <span class="it">de cada foto</span></h2>
+    <p>Pra cada foto que você escolher, grava um áudio respondendo estas quatro. É só isso.</p>
+    <div class="q">
+      <div class="item"><div><b>A intenção</b><p>O que você queria que essa foto transmitisse? Que sensação?</p></div></div>
+      <div class="item"><div><b>A luz</b><p>De onde veio a luz e por que você fez assim? Uma fonte, duas, natural?</p></div></div>
+      <div class="item"><div><b>O momento</b><p>O que você esperou, provocou ou percebeu na hora? (um gesto, um olhar)</p></div></div>
+      <div class="item"><div><b>A decisão</b><p>Qual foi o detalhe que fez a diferença? Aquilo que a maioria não faria.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="kf">O esqueleto</div>
+    <h2 style="margin-bottom:16px">O ebook, parte por parte</h2>
+    <div class="legend">
+      <span class="badge b-nos">✍ nós montamos</span>
+      <span class="badge b-voce">🎙 você fornece</span>
+      <span class="badge b-video">🎥 vídeo (vira curso)</span>
+    </div>
+
+    <div class="parts">
+      <div class="part">
+        <div class="pt">Abertura</div>
+        <div class="row"><span class="badge b-voce">🎙 você</span><div class="txt"><b>A carta</b><small>Sua história, na sua voz. → o áudio da tua história.</small></div></div>
+      </div>
+
+      <div class="part">
+        <div class="pt">Parte 1 — Aprender a ver</div>
+        <div class="row"><span class="badge b-nos">✍ nós</span><div class="txt"><b>A pergunta antes do clique · Compor · Esperar o momento</b><small>A base do olhar. A gente escreve.</small></div></div>
+        <div class="row"><span class="badge b-voce">🎙 você</span><div class="txt"><b>Estudo de caso: o olhar</b><small>1 foto sua forte em composição + o áudio das 4 perguntas.</small></div></div>
+      </div>
+
+      <div class="part">
+        <div class="pt">Parte 2 — A luz</div>
+        <div class="row"><span class="badge b-nos">✍ nós</span><span class="badge b-video">🎥</span><div class="txt"><b>Ler a luz · Luz de janela</b><small>Receita + esquema de luz. Opcional: um mini-vídeo você montando a luz de janela.</small></div></div>
+        <div class="row"><span class="badge b-voce">🎙 você</span><div class="txt"><b>Estudo de caso: a luz num retrato</b><small>1 retrato seu bem iluminado + as 4 perguntas. (é o formato do demo)</small></div></div>
+      </div>
+
+      <div class="part">
+        <div class="pt">Parte 3 — A câmera a serviço do olhar</div>
+        <div class="row"><span class="badge b-nos">✍ nós</span><div class="txt"><b>Sair do automático · Foco · Exposição</b><small>O prático da câmera. A gente escreve. (opcional: prints do teu menu)</small></div></div>
+      </div>
+
+      <div class="part">
+        <div class="pt">Parte 4 — Na prática</div>
+        <div class="row"><span class="badge b-voce">🎙 você</span><span class="badge b-video">🎥</span><div class="txt"><b>Estudo de caso: retrato de posicionamento</b><small>1 foto + 4 perguntas. Opcional: mini-vídeo dirigindo uma pose.</small></div></div>
+        <div class="row"><span class="badge b-voce">🎙 você</span><div class="txt"><b>Estudo de caso: pouca luz ou externa</b><small>1 foto de situação difícil + as 4 perguntas.</small></div></div>
+      </div>
+
+      <div class="part">
+        <div class="pt">Parte 5 — Depois do clique</div>
+        <div class="row"><span class="badge b-nos">✍ nós</span><span class="badge b-video">🎥</span><div class="txt"><b>Edição honesta · Não perca suas fotos</b><small>A gente escreve. Um mini-vídeo do teu fluxo no Lightroom = ouro (e vira aula do curso).</small></div></div>
+      </div>
+
+      <div class="part">
+        <div class="pt">Fechamento + Bônus</div>
+        <div class="row"><span class="badge b-nos">✍ nós</span><div class="txt"><b>Carta final · Cheat sheet · Checklist</b><small>A gente monta, na sua voz.</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="kf">Sobre os vídeos</div>
+    <h2>Grava pensando no <span class="it">curso</span> também</h2>
+    <p>Os mini-vídeos não são só pro ebook. Cada um é o embrião de uma aula do teu curso lá na frente. Então grava com um pouco de capricho (celular na horizontal, luz boa, áudio limpo) que a gente reaproveita tudo. Sugestões do que rende:</p>
+    <ul>
+      <li>Montar a luz de janela + rebatedor (2-3 min)</li>
+      <li>Dirigir uma pose: como você deixa a pessoa à vontade (2-3 min)</li>
+      <li>Seu fluxo de edição no Lightroom, do RAW ao final (3-5 min)</li>
+    </ul>
+    <div class="tip"><b>Sem pressão:</b> os vídeos são bônus. Se der pra fazer, ótimo. Se não, o ebook fica completo só com as fotos e os áudios.</div>
+  </section>
+
+  <footer>
+    <p>Manda tudo pra Marina no seu tempo. Quanto antes chegar, antes o ebook fica pronto pra vender.</p>
+    <p class="sig">Capturar a essência. O resto é ajuste.</p>
+  </footer>
+
+</div>
+</body>
+</html>
